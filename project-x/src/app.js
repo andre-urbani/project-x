@@ -1,19 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-class App extends React.Component {
+import Home from './components/Home'
+import Maps from './components/Maps'
+import 'bulma'
 
-  constructor() {
-    super()
-    this.state = {}
-  }
+const App = () => (
+  <BrowserRouter>
+    <Switch>
+      
+      <Route exact path="/" component={Home} />
+      <Route exact path="/maps" component={Maps} />
 
-  render() {
-    return (
-      <h1>Hello world</h1>
-    )
-  }
-}
+    </Switch>
+  </BrowserRouter>
+
+)
 
 ReactDOM.render(
   <App />,
