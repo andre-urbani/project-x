@@ -9,8 +9,8 @@ const Maps = () => {
   const [events, setEvents] = useState([])
 
   const fetchRequest = useCallback(() => {
-    setGeoloc({ ...viewport })
-    fetch(`https://api.list.co.uk/v1/events?near=${geoLoc.latitude},${geoLoc.longitude}/5`, {
+
+    fetch(`https://api.list.co.uk/v1/events?near=${viewport.latitude},${viewport.longitude}/10`, {
       headers: {
         'Authorization': `Bearer ${API_KEY}`
       }
@@ -24,15 +24,13 @@ const Maps = () => {
 
   useEffect(() => {
 
-    fetch(`https://api.list.co.uk/v1/events?near=${geoLoc.latitude},${geoLoc.longitude}/5`, {
+    fetch(`https://api.list.co.uk/v1/events?near=${viewport.latitude},${viewport.longitude}/10`, {
       headers: {
         'Authorization': `Bearer ${API_KEY}`
       }
     })
       .then(res => res.json())
       .then(res => setEvents(res))
-
-    console.log(geoLoc.latitude)
 
     return () => console.log('Unmounting component')
 
@@ -45,11 +43,6 @@ const Maps = () => {
     longitude: -2.59665,
     zoom: 13.5
 
-  })
-
-  const [geoLoc, setGeoloc] = useState({
-    latitude: 51.45523,
-    longitude: -2.59665
   })
 
   if (events.length === 0) {
