@@ -1,42 +1,48 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import ReactMapGL, { GeolocateControl, Marker, Popup } from 'react-map-gl'
 
 const TOKEN = 'pk.eyJ1IjoiZHJlZGl6emxlIiwiYSI6ImNrM2o2d3Q2ODBlbGMzanFsM3RtMG8waGsifQ.y8DoH4fhWbGPzd_VkDHIQg'
-const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYzY1N2U4NDMtNDY3YS00NTUzLWFiMmItNTdmODA0NWRiZDA0Iiwia2V5X2lkIjoiZDkwMmM0MzQtY2Y3NS00ZDkzLWEzNWItY2RlZmViZDgxN2ZiIiwiaWF0IjoxNTc0ODgzMzc5fQ.-dEHb4BFuFj6LoV3jf3jnXGlLbFB_N_7bSGxQ7K0CTM'
+const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMWZmNTRlZjEtYWIxZC00MWQzLWE1ZTAtZDE1ZDU1MTE3OWRjIiwia2V5X2lkIjoiNDQ0OTlkZmYtMTFjZS00N2QxLTk0MDEtMWMyNzVkN2RhZDRhIiwiaWF0IjoxNTc1NDU4ODk5fQ.kyAjrIZMZWjk7j6ZSpXp-I4XZrWLKiCgKpUrnGZ986g'
 
 const Maps = () => {
 
   const [events, setEvents] = useState([])
 
+  const fetchRequest = useCallback(() => {
+    handleClick()
+    fetch(`https://api.list.co.uk/v1/events?near=${geoLoc.latitude},${geoLoc.longitude}/5`, {
+      headers: {
+        'Authorization': `Bearer ${API_KEY}`
+      }
+    })
+      .then(res => res.json())
+      .then(res => setEvents(res))
+    console.log(events)
+
+
+  }, [{ ...viewport }])
+
+  function handleClick() {
+
+    console.log(geoLoc)
+    setGeoloc({ ...viewport })
+  }
 
   useEffect(() => {
-    
-    setInterval(() => {
-      
-      fetch(`https://api.list.co.uk/v1/events?near=${viewport.latitude},${viewport.longitude}/5`, {
-        headers: {
-          'Authorization': `Bearer ${API_KEY}`
-        }
-      })
-      
-        .then(res => res.json())
-        .then(res => setEvents(res))
-      return () => console.log('Unmounting component')
 
-    }, 1000)
-    
+    fetch(`https://api.list.co.uk/v1/events?near=${geoLoc.latitude},${geoLoc.longitude}/5`, {
+      headers: {
+        'Authorization': `Bearer ${API_KEY}`
+      }
+    })
+      .then(res => res.json())
+      .then(res => setEvents(res))
+
+    console.log(geoLoc.latitude)
+
+    return () => console.log('Unmounting component')
+
   }, [])
-
-  // useEffect(() => {
-  //   fetch(`https://api.list.co.uk/v1/events?near=${viewport.latitude},${viewport.longitude}/2`, {
-  //     headers: {
-  //       'Authorization': `Bearer ${API_KEY}`
-  //     }
-  //   })
-  //     .then(res => res.json())
-  //     .then(res => setEvents(res))
-  //   return () => console.log('Unmounting component')
-  // }, [])
 
   const [viewport, setViewport] = useState({
     width: '100vw',
@@ -45,6 +51,11 @@ const Maps = () => {
     longitude: -2.59665,
     zoom: 13.5
 
+  })
+
+  const [geoLoc, setGeoloc] = useState({
+    latitude: 51.45523,
+    longitude: -2.59665
   })
 
   if (events.length === 0) {
@@ -58,6 +69,10 @@ const Maps = () => {
       onViewportChange={viewport => {
         setViewport(viewport)
       }}
+      onClick={
+        fetchRequest
+      }
+
     >
 
       {events.map(event => (
