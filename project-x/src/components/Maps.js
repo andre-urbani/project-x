@@ -9,7 +9,7 @@ const Maps = () => {
   const [events, setEvents] = useState([])
 
   const fetchRequest = useCallback(() => {
-    handleClick()
+    setGeoloc({ ...viewport })
     fetch(`https://api.list.co.uk/v1/events?near=${geoLoc.latitude},${geoLoc.longitude}/5`, {
       headers: {
         'Authorization': `Bearer ${API_KEY}`
@@ -21,12 +21,6 @@ const Maps = () => {
 
 
   }, [{ ...viewport }])
-
-  function handleClick() {
-
-    console.log(geoLoc)
-    setGeoloc({ ...viewport })
-  }
 
   useEffect(() => {
 
