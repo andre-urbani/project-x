@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import ReactMapGL, { GeolocateControl, Marker, Popup } from 'react-map-gl'
+import moment from 'moment'
 
 const TOKEN = 'pk.eyJ1IjoiZHJlZGl6emxlIiwiYSI6ImNrM2o2d3Q2ODBlbGMzanFsM3RtMG8waGsifQ.y8DoH4fhWbGPzd_VkDHIQg'
 const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiODU0NzlhNzItZmZmZi00MWIwLWFkOGEtOWY2N2ViY2Y3MGI4Iiwia2V5X2lkIjoiYWNkY2I2NzAtY2Y5My00M2FmLThhZWYtMzUwNjU3MTIwYjMyIiwiaWF0IjoxNTc2MTg0NTgzfQ.lnIfptwPKNwU72QmkIsKsdr2Aen08hqATcjfdkoi3tU'
@@ -95,10 +96,13 @@ const Maps = (props) => {
           >
             <div id="popup">
               <h2>{selectedEvent.name}</h2>
-              {selectedEvent.descriptions[0].description ? (
+              {selectedEvent.descriptions[0] ? (
                 <p>{selectedEvent.descriptions[0].description}</p>
               ) : <p>No description</p>}
             </div>
+
+            <div>{moment(selectedEvent.schedules[0].performances[0].ts).format('MMM Do YYYY, h:mma')}</div>
+
           </Popup>
         ) : null}
 
