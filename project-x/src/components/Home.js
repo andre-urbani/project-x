@@ -9,7 +9,6 @@ const Home = (props) => {
 
   })
 
-  // const [geo, setGeo] = useState([])
 
   const fetchRequest = useCallback((e) => {
     e.preventDefault()
@@ -19,7 +18,6 @@ const Home = (props) => {
       .then(res => {
         const test = res
         props.history.push('/maps', test)
-        // setGeo(res)
       })
 
 
@@ -42,11 +40,6 @@ const Home = (props) => {
       <form className="form" onSubmit={fetchRequest}>
         <input className="input" type="text" placeholder="Text input" onChange={handleChange} />
         < button>submit</button>
-        <Link className='button' to={{
-          pathname: '/maps'
-        }}>Map
-    
-        </Link>
       </form>
 
     </div>

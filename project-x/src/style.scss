@@ -1,1 +1,22 @@
+#popup {
+  width: 300px;
+}
 
+#guide {
+  width: 20%
+}
+
+#event-column {
+  width: 20px
+}
+
+#main-container {
+  display: flex;
+  // flex-direction: column;
+}
+
+#map-container {
+  display: flex;
+  flex-direction: column;
+  // width: 60px
+}
