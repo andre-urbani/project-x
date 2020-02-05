@@ -39,7 +39,7 @@ const Home = (props) => {
 
       <form className="form" onSubmit={fetchRequest}>
         <input className="input" type="text" placeholder="Text input" onChange={handleChange} />
-        < button>submit</button>
+        <button>submit</button>
       </form>
 
     </div>

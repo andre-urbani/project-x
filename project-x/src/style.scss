@@ -2,12 +2,18 @@
   width: 300px;
 }
 
-#guide {
-  width: 20%
-}
+// #guide {
+//   width: 20%
+// }
 
 #event-column {
-  width: 20px
+  margin: 0px 30px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 95%;
+  width: 100%
 }
 
 #main-container {
@@ -18,5 +24,28 @@
 #map-container {
   display: flex;
   flex-direction: column;
-  width: 60%
+  width: 70%;
+  
+}
+
+#side-container {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  height: 95%;
+  width: 100%
+}
+
+#description {
+  width: 100%;
+  height: 100%;
+  // text-align: center;
+  margin: 20px;
+}
+
+#new-search {
+  text-align: center;
+  height: 5%;
+  width: 100%
 }
