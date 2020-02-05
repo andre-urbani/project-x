@@ -111,7 +111,7 @@ const Maps = (props) => {
       <div id="event-column">
         <div>
           {selectedEvent ? (
-            <div id="description">{selectedEvent.name}</div>
+            <h2 id="description">{selectedEvent.name}</h2>
           ) : null}
         </div>
         <div>
@@ -126,6 +126,14 @@ const Maps = (props) => {
             <div id="description">
               {selectedEvent.schedules[0].place.name}, {selectedEvent.schedules[0].place.address}, {selectedEvent.schedules[0].place.town}, {selectedEvent.schedules[0].place.postal_code}
             </div>
+          ) : null}
+        </div>
+        
+        <div>
+          {selectedEvent ? (
+            selectedEvent.schedules[0].performances[0].tickets ? (
+              <div id="description">£{selectedEvent.schedules[0].performances[0].tickets[0].min_price}</div>
+            ) : <div></div>
           ) : null}
         </div>
         <div>

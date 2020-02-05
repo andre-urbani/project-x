@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
+
+body {
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold
+}
+
 #popup {
   width: 300px;
 }
@@ -13,7 +20,8 @@
   justify-content: center;
   align-items: center;
   height: 95%;
-  width: 100%
+  width: 95%;
+  font-size: 19px;
 }
 
 #main-container {
@@ -33,7 +41,7 @@
   flex-direction: column;
   // justify-content: center;
   // align-items: center;
-  height: 95%;
+  // height: 95%;
   width: 100%
 }
 
@@ -47,5 +55,6 @@
 #new-search {
   text-align: center;
   height: 5%;
-  width: 100%
+  width: 100%;
+  font-size: 25px
 }
