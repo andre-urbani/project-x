@@ -128,7 +128,7 @@ const Maps = (props) => {
             </div>
           ) : null}
         </div>
-        
+
         <div>
           {selectedEvent ? (
             selectedEvent.schedules[0].performances[0].tickets ? (
@@ -138,7 +138,17 @@ const Maps = (props) => {
         </div>
         <div>
           {selectedEvent ? (
-            <a href={`${selectedEvent.website}`} target="_blank">Link to website</a>
+            selectedEvent.schedules[0].performances[0].links[0] ? (
+              <a href={`${selectedEvent.schedules[0].performances[0].links[0].url}`} target="_blank">Tickets</a>
+            ) : <div></div>
+          ) : null}
+        </div>
+        <div>
+          {selectedEvent ? (
+
+            selectedEvent.website ? (
+              <a href={`${selectedEvent.website}`} target="_blank">Website</a>
+            ) : <div></div>
           ) : null}
         </div>
       </div>
