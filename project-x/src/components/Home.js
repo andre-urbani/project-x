@@ -35,11 +35,15 @@ const Home = (props) => {
 
   return <section >
   
-    <div className='container'>
+    <div className='home-container'>
+      <h1 className="main-title">Event Finder</h1>
+      <h2 >How to use</h2>
+      <div className ="homepage-guide">Event finder is a tool that helps you find upcoming events in your local area. By submitting a postcode in the box below, you will be navigated to the Events page, which displays all events (signified by the letter E) within a 5 mile radius of the submitted postcode. By clicking on these events, a popup will be displayed, showing the name, time and date of the event. In the side panel to the right, further information regarding the selected event will also be displayed. If you wish to search for events in a different area, you can move the map around (by clicking and dragging) and click on your desired location on the map. This will then update the events to those within the clicked-on location. Alternatively, you can click on New Search (bottom of side panel) which will take you back to this page. Start by entering a postocode in the box below</div>
 
       <form className="form" onSubmit={fetchRequest}>
-        <input className="input" type="text" placeholder="Text input" onChange={handleChange} />
-        <button>submit</button>
+        <input className="input" type="text" placeholder="Enter Your Postcode" onChange={handleChange} />
+        <br/>
+        <button>Submit Postcode</button>
       </form>
 
     </div>
