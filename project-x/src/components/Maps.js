@@ -53,7 +53,7 @@ const Maps = (props) => {
   })
 
   if (events.length === 0) {
-    return <div>Loading...</div>
+    return <div className="loading-container">Loading...</div>
   }
 
   return <div id="main-container">
@@ -94,13 +94,13 @@ const Maps = (props) => {
             }}
           >
             <div id="popup">
-              <h2>{selectedEvent.name}</h2>
+              <h2 id="popup-marker">{selectedEvent.name}</h2>
               {/* {selectedEvent.descriptions[0] ? (
                 <p>{selectedEvent.descriptions[0].description}</p>
               ) : <p>No description</p>} */}
             </div>
 
-            <div>{moment(selectedEvent.schedules[0].performances[0].ts).format('MMM Do YYYY, h:mma')}</div>
+            <div id="popup-marker">{moment(selectedEvent.schedules[0].performances[0].ts).format('MMM Do YYYY, h:mma')}</div>
 
           </Popup>
         ) : null}
