@@ -29,7 +29,7 @@ Having researched various potential ideas for a side-project, I came across a pu
 - Home page where user enters and submits a postcode, including guidance on how to use
 - A map which shows events within a 5 mile radius of the submitted postcode
 - Popups integrated into the map, which when clicked on will display the name and time/date of event
-- A side panel with addition information regarding the event
+- A side panel with additional information regarding the event
 - User is able to move around the map to any location, and when an area on the map is clicked, all events within a 5 mile radius of the clicked-on area will be displayed
 
 ### Functionality
