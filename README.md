@@ -14,7 +14,7 @@ You can try it out yourself [here]()
 - React.js
 - React-Map-GL (a suite of React components for Mapbox GL)
 - The List API
-- Postcode to lat/long API
+- Postcode to lat/long converter API
 - Route, Switch, Link from 'react-router-dom'
 - HTML5
 - CSS
