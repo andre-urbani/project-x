@@ -2,6 +2,13 @@
 
 ![Event Finder Home Page](https://user-images.githubusercontent.com/41396233/74654846-25810700-5183-11ea-8950-4cdc95350021.png)
 
+## Installation
+
+- Clone or download the repository
+- Run ```npm init``` in the CLI
+- Run ```npm install``` in the CLI
+- Run ```npm run serve``` in the CLI
+
 ## Introduction
 
 Event Finder is my first side project, worked on periodically during my time on, and following completion of, the General Assembly Software Engineering Immersive course. Event finder is a tool that helps you find upcoming events in your local area (data sourced from The List API), and was developed primarily using React.js and Mapbox. By submitting a postcode, the user will be navigated to the Events page which displays all events within a 5 mile radius of the submitted postcode. By clicking on these events, a popup will be displayed, showing the name, time and date of the event, with additional information (including a link to purchase tickets and organisers website) displayed in the right-hand panel.
