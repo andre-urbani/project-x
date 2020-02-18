@@ -95,13 +95,8 @@ const Maps = (props) => {
           >
             <div id="popup">
               <h2 id="popup-marker">{selectedEvent.name}</h2>
-              {/* {selectedEvent.descriptions[0] ? (
-                <p>{selectedEvent.descriptions[0].description}</p>
-              ) : <p>No description</p>} */}
             </div>
-
             <div id="popup-marker">{moment(selectedEvent.schedules[0].performances[0].ts).format('MMM Do YYYY, h:mma')}</div>
-
           </Popup>
         ) : null}
 

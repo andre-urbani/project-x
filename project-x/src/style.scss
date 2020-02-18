@@ -49,7 +49,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 70%;
-  box-shadow: 0 4px 8px 0 rgba(48, 48, 48, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px 0 rgba(48, 48, 48, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
   border: solid 2px rgb(116, 0, 0)
   
 }
@@ -68,12 +68,15 @@ body {
   height: 100%;
   // text-align: center;
   margin: 20px;
+  margin-left: 30px;
+  max-width: 400px
 }
 
 #new-search {
   text-align: center;
   height: 5%;
   width: 100%;
+  margin-right: 25px;
   font-size: 25px
 }
 
@@ -120,7 +123,7 @@ button {
 }
 
 .input {
-  margin-bottom: 20px
+  margin-bottom: 40px
 }
 
 a { color: inherit; } 
@@ -133,4 +136,8 @@ a { color: inherit; }
   height: 100vh;
   width: 175vh;
   font-size: 30px
+}
+
+.mapboxgl-popup-content {
+  box-shadow: 0 4px 8px 0 rgba(48, 48, 48, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
 }
